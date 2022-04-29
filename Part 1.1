@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>WebDev_CA2</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.js"></script>
+        <script>
+            function reply_click(clicked_object)
+                {
+                    var sql = clicked_object.getAttribute('data-sql');
+                    editor.setValue(sql);
+                }
+        </script>
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">MENU</a>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page content-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mt-5">
+                    <h1>Data Manipulation & Validation</h1>
+                    <p class="lead">Part 1.1</p>
+                </div>
+                <div class="col-lg-2 order-1 mb-3 d-flex flex-column gap-2 mx-auto align-items-stretch">
+                    <button name="1.1.1" class="btn btn-success btn-block" data-sql="SELECT* FROM departments LIMIT 1000" onClick="reply_click(this)">1.1.1</button>
+                    <button name="1.1.2" class="btn btn-success btn-block"data-sql="SELECT emp_id,first_name,last_name FROM employees LIMIT 1000" onClick="reply_click(this)">1.1.2</button>
+                    <button name="1.1.3" class="btn btn-success btn-block"data-sql="SELECT title FROM titles LIMIT 1000" onClick="reply_click(this)">1.1.3</button>
+                    <button name="1.1.4" class="btn btn-success btn-block"data-sql="SELECT DISTINCT title FROM titles ORDER BY title ASC LIMIT 1000" onClick="reply_click(this)">1.1.4</button>
+                    <button name="1.1.5" class="btn btn-success btn-block"data-sql="SELECT first_name,last_name FROM employees ORDER BY first_name,last_name ASC LIMIT 1000" onClick="reply_click(this)">1.1.5</button>
+
+                </div>
+                <div class="col-lg-10 order-2 border-success">
+               
+                    </div>
+                    <div id="error" class="error"></div>
+                    
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/sql/sql.min.js"></script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script type="text/javascript" src="js/gui.js"></script>
+    </body>
+</html>
